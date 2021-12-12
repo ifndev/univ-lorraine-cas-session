@@ -61,6 +61,20 @@ export default class Session {
     }
 
     /**
+     * Logs out of the CAS
+     * @returns 
+     */
+    async logout() {
+        await this.fetchPage("https://auth.univ-lorraine.fr/logout").catch(err => {
+            throw (`Error while logging out: \n${err}\n cookies will be cleared anyway`);
+        }).finally(() => {
+            this.#sessionCookies = new CookieJar();
+        });
+    }
+
+
+
+    /**
      * Asynchronously fetches a page using the authenticated session
      * @param url url of the request
      * @param options options (headers, method, body)
@@ -68,7 +82,7 @@ export default class Session {
      */
     async fetchPage(url, options) {
 
-        if (this.#sessionCookies.cookies.get("auth.univ-lorraine.fr").get("TGC-CAS") != undefined) {
+        if (this.#sessionCookies?.cookies?.get("auth.univ-lorraine.fr")?.get("TGC-CAS") != null) {
             options = {
                 "headers": options?.headers != null ? { ...this.#baseHeaders, ...options.headers } : this.#baseHeaders,
                 "method": options?.method != null ? options.method.toUpperCase() : "GET",
