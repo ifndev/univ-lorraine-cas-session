@@ -85,5 +85,3 @@ export default class Session {
         return this.#sessionCookies;
     }
 }
-
-module.exports = Session;
