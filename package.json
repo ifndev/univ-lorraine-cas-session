@@ -1,10 +1,10 @@
 {
   "name": "univ-lorraine-cas-session",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lets you login to the «Université de Lorraine» central authentication system and fetch pages from the UL services using the authenticated session",
   "homepage": "https://github.com/ifndev/univ-lorraine-cas-session#readme",
   "bugs": {
-    "url" : "https://github.com/ifndev/univ-lorraine-cas-session/issues"
+    "url": "https://github.com/ifndev/univ-lorraine-cas-session/issues"
   },
   "repository": "github:ifndev/univ-lorraine-cas-session",
   "main": "src/index.mjs",
