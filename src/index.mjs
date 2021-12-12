@@ -60,6 +60,12 @@ export default class Session {
         }
     }
 
+    /**
+     * Asynchronously fetches a page using the authenticated session
+     * @param url url of the request
+     * @param options options (headers, method, body)
+     * @returns 
+     */
     async fetchPage(url, options) {
 
         if (this.#sessionCookies.cookies.get("auth.univ-lorraine.fr").get("TGC-CAS") != undefined) {
