@@ -4,7 +4,7 @@ export default class Session {
 
     #sessionCookies = new CookieJar();
     #baseHeaders = {
-        "User-Agent": `univ-lorraine-cas-session/1.0.0 (github.com/ifndev/univ-lorraine-cas-session)`,
+        "User-Agent": `univ-lorraine-cas-session/1.1.1 (github.com/ifndev/univ-lorraine-cas-session)`,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
         "Accept-Language": "fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3",
         "Content-Type": "application/x-www-form-urlencoded",
