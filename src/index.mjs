@@ -98,7 +98,7 @@ export default class Session {
                 }
             }
 
-            let response = await fetch(this.#sessionCookies, url,).catch(err => {
+            let response = await fetch(this.#sessionCookies, url, options).catch(err => {
                 throw (`Error while fetching ${url}: \n${err}`);
             });
 
