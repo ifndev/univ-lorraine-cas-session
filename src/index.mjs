@@ -60,10 +60,10 @@ export default class Session {
         }
     }
 
-    async fetchPage(url) {
+    async fetchPage(url, options) {
         if (this.#sessionCookies.cookies.get("auth.univ-lorraine.fr").get("TGC-CAS") != undefined) {
             let response = await fetch(this.#sessionCookies, url, {
-                "headers": this.#baseHeaders,
+                "headers": options?.headers != null ? {...this.#baseHeaders, ...options.headers} : this.#baseHeaders,
                 "method": "GET",
             }).catch(err => {
                 throw(`Error while fetching ${url}: \n${err}`);
